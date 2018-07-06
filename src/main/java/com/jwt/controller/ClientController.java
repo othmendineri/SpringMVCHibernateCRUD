@@ -19,7 +19,7 @@ import com.jwt.service.ClientService;
 
 public class ClientController {
 
-	//private static final Logger logger = Logger.getLogger(ClientController.class);
+
 
 	public ClientController() {
 		System.out.println("ClientController()");
