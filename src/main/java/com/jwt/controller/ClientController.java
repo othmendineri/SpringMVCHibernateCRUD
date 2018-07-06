@@ -21,7 +21,7 @@ public class ClientController {
 
 
 	public ClientController() {
-		System.out.println("ClientController()");
+		//System.out.println("ClientController()");
 	}
 
 	@Autowired

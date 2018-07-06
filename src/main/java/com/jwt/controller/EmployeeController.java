@@ -19,7 +19,7 @@ import com.jwt.service.EmployeeService;
 
 public class EmployeeController {
 
-	private static final Logger logger = Logger.getLogger(EmployeeController.class);
+	//private static final Logger logger = Logger.getLogger(EmployeeController.class);
 
 	public EmployeeController() {
 		System.out.println("EmployeeController()");
