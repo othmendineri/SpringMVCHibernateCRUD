@@ -1,0 +1,3 @@
+com\jwt\controller\ClientControllerTest.class
+com\jwt\dao\ClientDAOImplTest.class
+com\jwt\service\ClientServiceImplTest.class
