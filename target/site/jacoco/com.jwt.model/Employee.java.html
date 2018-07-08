@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Employee.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SpringMVCHibernateCRUD Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">com.jwt.model</a> &gt; <span class="el_source">Employee.java</span></div><h1>Employee.java</h1><pre class="source lang-java linenums">package com.jwt.model;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = &quot;EMP_TBL&quot;)
+<span class="fc" id="L14">public class Employee implements Serializable {</span>
+
+	private static final long serialVersionUID = -3465813074586302847L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+
+	@Column
+	private String name;
+
+	@Column
+	private String email;
+
+	@Column
+	private String address;
+
+	@Column
+	private String telephone;
+
+	public int getId() {
+<span class="nc" id="L35">		return id;</span>
+	}
+
+	public void setId(int id) {
+<span class="nc" id="L39">		this.id = id;</span>
+<span class="nc" id="L40">	}</span>
+
+	public String getName() {
+<span class="nc" id="L43">		return name;</span>
+	}
+
+	public void setName(String name) {
+<span class="nc" id="L47">		this.name = name;</span>
+<span class="nc" id="L48">	}</span>
+
+	public String getEmail() {
+<span class="nc" id="L51">		return email;</span>
+	}
+
+	public void setEmail(String email) {
+<span class="nc" id="L55">		this.email = email;</span>
+<span class="nc" id="L56">	}</span>
+
+	public String getAddress() {
+<span class="nc" id="L59">		return address;</span>
+	}
+
+	public void setAddress(String address) {
+<span class="nc" id="L63">		this.address = address;</span>
+<span class="nc" id="L64">	}</span>
+
+	public String getTelephone() {
+<span class="nc" id="L67">		return telephone;</span>
+	}
+
+	public void setTelephone(String telephone) {
+<span class="nc" id="L71">		this.telephone = telephone;</span>
+<span class="nc" id="L72">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

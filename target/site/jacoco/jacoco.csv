@@ -1,0 +1,17 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+SpringMVCHibernateCRUD Maven Webapp,com.jwt.service,FactureServiceImpl,28,3,0,0,9,1,6,1,6,1
+SpringMVCHibernateCRUD Maven Webapp,com.jwt.service,ProviderServiceImpl,28,3,0,0,9,1,6,1,6,1
+SpringMVCHibernateCRUD Maven Webapp,com.jwt.service,EmployeeServiceImpl,28,3,0,0,9,1,6,1,6,1
+SpringMVCHibernateCRUD Maven Webapp,com.jwt.service,ClientServiceImpl,4,27,0,0,2,8,1,6,1,6
+SpringMVCHibernateCRUD Maven Webapp,com.jwt.model,Facture,42,3,0,0,18,1,12,1,12,1
+SpringMVCHibernateCRUD Maven Webapp,com.jwt.model,Client,0,66,0,0,0,28,0,19,0,19
+SpringMVCHibernateCRUD Maven Webapp,com.jwt.model,Provider,63,3,0,0,27,1,18,1,18,1
+SpringMVCHibernateCRUD Maven Webapp,com.jwt.model,Employee,35,3,0,0,15,1,10,1,10,1
+SpringMVCHibernateCRUD Maven Webapp,com.jwt.dao,ClientDAOImpl,0,49,1,1,0,13,1,6,0,6
+SpringMVCHibernateCRUD Maven Webapp,com.jwt.dao,ProviderDAOImpl,46,3,2,0,12,1,6,1,5,1
+SpringMVCHibernateCRUD Maven Webapp,com.jwt.dao,FactureDAOImpl,46,3,2,0,12,1,6,1,5,1
+SpringMVCHibernateCRUD Maven Webapp,com.jwt.dao,EmployeeDAOImpl,46,3,2,0,12,1,6,1,5,1
+SpringMVCHibernateCRUD Maven Webapp,com.jwt.controller,ClientController,0,86,0,2,0,22,0,7,0,6
+SpringMVCHibernateCRUD Maven Webapp,com.jwt.controller,EmployeeController,88,6,2,0,22,3,7,1,6,1
+SpringMVCHibernateCRUD Maven Webapp,com.jwt.controller,FactureController,83,10,2,0,20,4,6,2,5,2
+SpringMVCHibernateCRUD Maven Webapp,com.jwt.controller,ProviderController,83,10,2,0,20,4,6,2,5,2

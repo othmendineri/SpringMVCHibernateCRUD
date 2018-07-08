@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Provider.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SpringMVCHibernateCRUD Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">com.jwt.model</a> &gt; <span class="el_source">Provider.java</span></div><h1>Provider.java</h1><pre class="source lang-java linenums">package com.jwt.model;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = &quot;PRV_TBL&quot;)
+<span class="fc" id="L14">public class Provider implements Serializable {</span>
+
+	private static final long serialVersionUID = -3465813074586302847L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+
+	@Column
+	private String name;
+
+	@Column
+	private String email;
+
+	@Column
+	private String address;
+
+	@Column
+	private String tel1;
+
+	@Column
+	private String tel2;
+
+	@Column
+	private String telFixe;
+
+	@Column
+	private String fax;
+
+	@Column
+	private String article;
+
+	public int getId() {
+<span class="nc" id="L47">		return id;</span>
+	}
+
+	public void setId(int id) {
+<span class="nc" id="L51">		this.id = id;</span>
+<span class="nc" id="L52">	}</span>
+
+	public String getName() {
+<span class="nc" id="L55">		return name;</span>
+	}
+
+	public void setName(String name) {
+<span class="nc" id="L59">		this.name = name;</span>
+<span class="nc" id="L60">	}</span>
+
+	public String getEmail() {
+<span class="nc" id="L63">		return email;</span>
+	}
+
+	public void setEmail(String email) {
+<span class="nc" id="L67">		this.email = email;</span>
+<span class="nc" id="L68">	}</span>
+
+	public String getAddress() {
+<span class="nc" id="L71">		return address;</span>
+	}
+
+	public void setAddress(String address) {
+<span class="nc" id="L75">		this.address = address;</span>
+<span class="nc" id="L76">	}</span>
+
+	public String getTel1() {
+<span class="nc" id="L79">		return tel1;</span>
+	}
+
+	public void setTel1(String tel1) {
+<span class="nc" id="L83">		this.tel1 = tel1;</span>
+<span class="nc" id="L84">	}</span>
+
+	public String getTel2() {
+<span class="nc" id="L87">		return tel2;</span>
+	}
+
+	public void setTel2(String tel2) {
+<span class="nc" id="L91">		this.tel2 = tel2;</span>
+<span class="nc" id="L92">	}</span>
+
+	public String getTelFixe() {
+<span class="nc" id="L95">		return telFixe;</span>
+	}
+
+	public void setTelFixe(String telFixe) {
+<span class="nc" id="L99">		this.telFixe = telFixe;</span>
+<span class="nc" id="L100">	}</span>
+
+	public String getFax() {
+<span class="nc" id="L103">		return fax;</span>
+	}
+
+	public void setFax(String fax) {
+<span class="nc" id="L107">		this.fax = fax;</span>
+<span class="nc" id="L108">	}</span>
+
+	public String getArticle() {
+<span class="nc" id="L111">		return article;</span>
+	}
+
+	public void setArticle(String article) {
+<span class="nc" id="L115">		this.article = article;</span>
+<span class="nc" id="L116">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

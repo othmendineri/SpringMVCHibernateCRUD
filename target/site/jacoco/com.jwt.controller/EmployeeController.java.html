@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>EmployeeController.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SpringMVCHibernateCRUD Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">com.jwt.controller</a> &gt; <span class="el_source">EmployeeController.java</span></div><h1>EmployeeController.java</h1><pre class="source lang-java linenums">package com.jwt.controller;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.jboss.logging.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+import com.jwt.model.Employee;
+import com.jwt.service.EmployeeService;
+
+@Controller
+
+public class EmployeeController {
+
+	//private static final Logger logger = Logger.getLogger(EmployeeController.class);
+
+<span class="fc" id="L24">	public EmployeeController() {</span>
+<span class="fc" id="L25">		System.out.println(&quot;EmployeeController()&quot;);</span>
+<span class="fc" id="L26">	}</span>
+
+	@Autowired
+	private EmployeeService employeeService;
+
+	@RequestMapping(value = &quot;/employeelist&quot;)
+	public ModelAndView listEmployee(ModelAndView model) throws IOException {
+<span class="nc" id="L33">		List&lt;Employee&gt; listEmployee = employeeService.getAllEmployees();</span>
+<span class="nc" id="L34">		model.addObject(&quot;listEmployee&quot;, listEmployee);</span>
+<span class="nc" id="L35">		model.setViewName(&quot;EmployeeList&quot;);</span>
+<span class="nc" id="L36">		return model;</span>
+	}
+	@RequestMapping(value = &quot;/&quot;)
+	public ModelAndView home(ModelAndView model)  {
+<span class="nc" id="L40">		model.setViewName(&quot;home&quot;);</span>
+<span class="nc" id="L41">		return model;</span>
+	}
+
+	@RequestMapping(value = &quot;/newEmployee&quot;, method = RequestMethod.GET)
+	public ModelAndView newContact(ModelAndView model) {
+<span class="nc" id="L46">		Employee employee = new Employee();</span>
+<span class="nc" id="L47">		model.addObject(&quot;employee&quot;, employee);</span>
+<span class="nc" id="L48">		model.setViewName(&quot;EmployeeForm&quot;);</span>
+<span class="nc" id="L49">		return model;</span>
+	}
+
+	@RequestMapping(value = &quot;/saveEmployee&quot;, method = RequestMethod.POST)
+	public ModelAndView saveEmployee(@ModelAttribute Employee employee) {
+<span class="nc bnc" id="L54" title="All 2 branches missed.">		if (employee.getId() == 0) { // if employee id is 0 then creating the</span>
+			// employee other updating the employee
+<span class="nc" id="L56">			employeeService.addEmployee(employee);</span>
+		} else {
+<span class="nc" id="L58">			employeeService.updateEmployee(employee);</span>
+		}
+<span class="nc" id="L60">		return new ModelAndView(&quot;redirect:/&quot;);</span>
+	}
+
+	@RequestMapping(value = &quot;/deleteEmployee&quot;, method = RequestMethod.GET)
+	public ModelAndView deleteEmployee(HttpServletRequest request) {
+<span class="nc" id="L65">		int employeeId = Integer.parseInt(request.getParameter(&quot;id&quot;));</span>
+<span class="nc" id="L66">		employeeService.deleteEmployee(employeeId);</span>
+<span class="nc" id="L67">		return new ModelAndView(&quot;redirect:/&quot;);</span>
+	}
+
+	@RequestMapping(value = &quot;/editEmployee&quot;, method = RequestMethod.GET)
+	public ModelAndView editContact(HttpServletRequest request) {
+<span class="nc" id="L72">		int employeeId = Integer.parseInt(request.getParameter(&quot;id&quot;));</span>
+<span class="nc" id="L73">		Employee employee = employeeService.getEmployee(employeeId);</span>
+<span class="nc" id="L74">		ModelAndView model = new ModelAndView(&quot;EmployeeForm&quot;);</span>
+<span class="nc" id="L75">		model.addObject(&quot;employee&quot;, employee);</span>
+
+<span class="nc" id="L77">		return model;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

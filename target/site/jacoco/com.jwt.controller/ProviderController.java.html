@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ProviderController.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SpringMVCHibernateCRUD Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">com.jwt.controller</a> &gt; <span class="el_source">ProviderController.java</span></div><h1>ProviderController.java</h1><pre class="source lang-java linenums">package com.jwt.controller;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.jboss.logging.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+import com.jwt.model.Provider;
+import com.jwt.service.ProviderService;
+
+@Controller
+
+public class ProviderController {
+
+<span class="fc" id="L22">	private static final Logger logger = Logger.getLogger(ProviderController.class);</span>
+
+<span class="fc" id="L24">	public ProviderController() {</span>
+<span class="fc" id="L25">		System.out.println(&quot;ProviderController()&quot;);</span>
+<span class="fc" id="L26">	}</span>
+
+	@Autowired
+	private ProviderService providerService;
+
+	@RequestMapping(value = &quot;/providerlist&quot;)
+	public ModelAndView listProvider(ModelAndView model) throws IOException {
+<span class="nc" id="L33">		List&lt;Provider&gt; listProvider = providerService.getAllProvider();</span>
+<span class="nc" id="L34">		model.addObject(&quot;listProvider&quot;, listProvider);</span>
+<span class="nc" id="L35">		model.setViewName(&quot;ProviderList&quot;);//Il faut avoir une page jsp de nom ProviderList</span>
+<span class="nc" id="L36">		return model;</span>
+	}
+	
+	
+
+	@RequestMapping(value = &quot;/newProvider&quot;, method = RequestMethod.GET)
+	public ModelAndView newContact(ModelAndView model) {
+<span class="nc" id="L43">		Provider provider = new Provider();</span>
+<span class="nc" id="L44">		model.addObject(&quot;provider&quot;, provider);</span>
+<span class="nc" id="L45">		model.setViewName(&quot;ProviderForm&quot;);</span>
+<span class="nc" id="L46">		return model;</span>
+	}
+
+	@RequestMapping(value = &quot;/saveProvider&quot;, method = RequestMethod.POST)
+	public ModelAndView save(@ModelAttribute Provider provider) {
+<span class="nc bnc" id="L51" title="All 2 branches missed.">		if (provider.getId() == 0) {</span>
+<span class="nc" id="L52">			providerService.addProvider(provider);</span>
+		} else {
+<span class="nc" id="L54">			providerService.updateProvider(provider);</span>
+		}
+<span class="nc" id="L56">		return new ModelAndView(&quot;redirect:/&quot;);</span>
+	}
+
+	@RequestMapping(value = &quot;/deleteProvider&quot;, method = RequestMethod.GET)
+	public ModelAndView deleteProvider(HttpServletRequest request) {
+<span class="nc" id="L61">		int providerId = Integer.parseInt(request.getParameter(&quot;id&quot;));</span>
+<span class="nc" id="L62">		providerService.deleteProvider(providerId);</span>
+<span class="nc" id="L63">		return new ModelAndView(&quot;redirect:/&quot;);</span>
+	}
+
+	@RequestMapping(value = &quot;/editProvider&quot;, method = RequestMethod.GET)
+	public ModelAndView editContact(HttpServletRequest request) {
+<span class="nc" id="L68">		int providerId = Integer.parseInt(request.getParameter(&quot;id&quot;));</span>
+<span class="nc" id="L69">		Provider provider = providerService.getProvider(providerId);</span>
+<span class="nc" id="L70">		ModelAndView model = new ModelAndView(&quot;ProviderForm&quot;);</span>
+<span class="nc" id="L71">		model.addObject(&quot;provider&quot;, provider);</span>
+
+<span class="nc" id="L73">		return model;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Facture.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SpringMVCHibernateCRUD Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">com.jwt.model</a> &gt; <span class="el_source">Facture.java</span></div><h1>Facture.java</h1><pre class="source lang-java linenums">package com.jwt.model;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = &quot;FACT_TBL&quot;)
+<span class="fc" id="L14">public class Facture implements Serializable {</span>
+	private static final long serialVersionUID = -3465813074586302847L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	
+	@Column
+	private int numFacture;
+
+	@Column
+	private String date;
+
+	@Column
+	private String nomClient;
+
+	@Column
+	private String article;
+
+	@Column
+	private int qte;
+
+	@Column
+	private int prix;
+
+	
+	public String getDate() {
+<span class="nc" id="L40">		return date;</span>
+	}
+
+	public void setDate(String date) {
+<span class="nc" id="L44">		this.date = date;</span>
+<span class="nc" id="L45">	}</span>
+
+	public String getNomClient() {
+<span class="nc" id="L48">		return nomClient;</span>
+	}
+
+	public void setNomClient(String nomClient) {
+<span class="nc" id="L52">		this.nomClient = nomClient;</span>
+<span class="nc" id="L53">	}</span>
+
+	public String getArticle() {
+<span class="nc" id="L56">		return article;</span>
+	}
+
+	public void setArticle(String article) {
+<span class="nc" id="L60">		this.article = article;</span>
+<span class="nc" id="L61">	}</span>
+
+	public int getQte() {
+<span class="nc" id="L64">		return qte;</span>
+	}
+
+	public void setQte(int qte) {
+<span class="nc" id="L68">		this.qte = qte;</span>
+<span class="nc" id="L69">	}</span>
+
+	public int getPrix() {
+<span class="nc" id="L72">		return prix;</span>
+	}
+
+	public void setPrix(int prix) {
+<span class="nc" id="L76">		this.prix = prix;</span>
+<span class="nc" id="L77">	}</span>
+
+	public int getNumFacture() {
+<span class="nc" id="L80">		return numFacture;</span>
+	}
+
+	public void setNumFacture(int numFacture) {
+<span class="nc" id="L84">		this.numFacture = numFacture;</span>
+<span class="nc" id="L85">	}</span>
+
+	
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.2.201409121644</span></div></body></html>

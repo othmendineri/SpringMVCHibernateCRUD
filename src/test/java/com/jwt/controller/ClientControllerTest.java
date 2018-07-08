@@ -77,7 +77,7 @@ public class ClientControllerTest {
 	@Test
 	public final void testSaveClient2() throws Exception {
 		this.mockMvc.perform(post("/saveClient")
-        .param("id", "47")
+        .param("id", "2")
         .param("name", "sabri")
         .param("email", "mah.sabr@gmail.co")
         .param("address", "maloussy")
@@ -94,14 +94,14 @@ public class ClientControllerTest {
 	@Test
 	public final void testDeleteClient() throws Exception {
 		this.mockMvc.perform(get("/deleteClient")
-		        .param("id", "56"))
+		        .param("id", "3"))
 		        .andExpect(redirectedUrl("/"));      		
 	}
 
 	@Test
 	public final void testEditContact() throws Exception {
 		this.mockMvc.perform(get("/editClient")
-		.param("id", "59"))
+		.param("id", "4"))
         .andExpect(status().isOk())
 		.andExpect(view().name("ClientForm"))
         .andExpect(forwardedUrl("/WEB-INF/pages/ClientForm.jsp"));        
