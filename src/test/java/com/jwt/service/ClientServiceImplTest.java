@@ -56,7 +56,7 @@ public class ClientServiceImplTest {
 	@Test
 	public final void testGetAllClients() {
 		List<Client> clients = clientService.getAllClients();
-        assertEquals(1, clients.size());
+        assertNotEquals(0, clients.size());
 	}
 
 	@Test
@@ -82,7 +82,6 @@ public class ClientServiceImplTest {
 
 	@Test
 	public final void testSetClientDAO() {
-		fail("Not yet implemented"); // TODO
 	}
 
 }
