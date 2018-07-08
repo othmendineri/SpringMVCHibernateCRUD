@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.jwt.controller.ClientControllerTest
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 5.571 sec <<< FAILURE!
-testDeleteClient(com.jwt.controller.ClientControllerTest)  Time elapsed: 0.046 sec  <<< ERROR!
+Tests run: 7, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 6.902 sec <<< FAILURE!
+testDeleteClient(com.jwt.controller.ClientControllerTest)  Time elapsed: 0.057 sec  <<< ERROR!
 org.springframework.web.util.NestedServletException: Request processing failed; nested exception is org.hibernate.ObjectNotFoundException: No row with the given identifier exists: [com.jwt.model.Client#56]
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:978)
 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:857)
@@ -75,7 +75,7 @@ Caused by: org.hibernate.ObjectNotFoundException: No row with the given identifi
 	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
-	at com.sun.proxy.$Proxy29.deleteClient(Unknown Source)
+	at com.sun.proxy.$Proxy30.deleteClient(Unknown Source)
 	at com.jwt.controller.ClientController.deleteClient(ClientController.java:60)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
