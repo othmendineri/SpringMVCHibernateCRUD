@@ -60,7 +60,7 @@
 					<td>${client.numFacture}</td>
 					<td><a href="editClient?id=${client.id}">Edit</a>
 						&nbsp;&nbsp;&nbsp;&nbsp; <a
-						href="deleteEmployee?id=${client.id}">Delete</a></td>
+						href="deleteClient?id=${client.id}">Delete</a></td>
 
 				</tr>
 			</c:forEach>
