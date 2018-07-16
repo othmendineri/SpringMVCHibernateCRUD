@@ -17,6 +17,7 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
 
 import com.jwt.model.Client;
 
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:spring-servlet.xml")
 @Transactional

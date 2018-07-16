@@ -27,16 +27,16 @@ p {
 	<h1>Welcome to our website</h1>
 	<p>
 		<br>
-		<a href="http://localhost:5050/SpringMVCHibernateCRUD/employeelist">Liste des employées</a>
+		<a href="./employeelist">Liste des employées</a>
 		</br>
 		<br>	
-		<a href="http://localhost:5050/SpringMVCHibernateCRUD/factureslist">Liste de factures</a>
+		<a href="./factureslist">Liste de factures</a>
 		</br>
 		<br>	
-		<a href="http://localhost:5050/SpringMVCHibernateCRUD/clientlist">Liste de clients</a>
+		<a href="./clientlist">Liste de clients</a>
 		</br>
 		<br>	
-		<a href="http://localhost:5050/SpringMVCHibernateCRUD/providerlist">Liste de fournisseurs</a>
+		<a href="./providerlist">Liste de fournisseurs</a>
 		</br>
 	</p>
 </body>
