@@ -181,7 +181,7 @@
         <version>2.2</version>
         <configuration>
           <server>deployTomcat</server>
-          <url>http://192.168.1.5/manager/text</url>
+          <url>http://192.168.1.5:5050/manager/text</url>
           <path>/SpringMVCHibernateCRUD</path>
         </configuration>
       </plugin>
