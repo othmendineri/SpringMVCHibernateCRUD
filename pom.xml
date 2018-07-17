@@ -140,7 +140,7 @@
         	</plugins>
              
        </build>
-       <!--ici profiles  -->
+
        <profiles>
 <profile>
   <id>dev</id>
