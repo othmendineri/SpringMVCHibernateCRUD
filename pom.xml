@@ -152,24 +152,6 @@
 			   <version>2.2</version>
 			   </plugin>
 			   <!--debut plugin docker  -->
-	  <plugin>
-      <groupId>com.spotify</groupId>
-      <artifactId>docker-maven-plugin</artifactId>
-      <version>0.4.5</version>
-      <configuration>
-        <imageName>dockerexemple</imageName>
-        <baseImage>java</baseImage>
-        <entryPoint>["java", "-jar", "/${project.build.finalName}.war"]</entryPoint>
-        <!-- copy the service's jar file from target into the root directory of the image --> 
-        <resources>
-           <resource>
-             <targetPath>/</targetPath>
-             <directory>${project.build.directory}</directory>
-             <include>${project.build.finalName}.war</include>
-           </resource>
-        </resources>
-      </configuration>
-    </plugin>
 			   <!-- fin plugin docker -->
 
         	</plugins>
@@ -219,7 +201,7 @@
 		                    <artifactId>tomcat7-maven-plugin</artifactId>
 		                    <version>2.2</version>
 		                    <configuration>
-		                        <url>http://192.168.1.5:5050/manager/text</url>
+		                        <url>http://192.168.1.100:5050/manager/text</url>
 		                        <server>deployTomcat</server>
 		                        <path>/SpringMVCHibernateCRUD</path>
 		                    </configuration>
@@ -232,17 +214,17 @@
 		<repositories>
 	    <repository>
 	      <id>maven-public</id>
-	      <url>http://192.168.1.5:8081/repository/maven-public/</url>
+	      <url>http://192.168.1.100:8081/repository/maven-public/</url>
 	    </repository>
 	  </repositories>
 	  <distributionManagement>
 	    <snapshotRepository>
 	      <id>nexus-snapshots</id>
-	      <url>http://192.168.1.5:8081/repository/maven-snapshots/</url>
+	      <url>http://192.168.1.100:8081/repository/maven-snapshots/</url>
 	    </snapshotRepository>
 	    <repository>
 	      <id>nexus-releases</id>
-	      <url>http://192.168.1.5:8081/repository/maven-releases/</url>
+	      <url>http://192.168.1.100:8081/repository/maven-releases/</url>
 	    </repository>
 	  </distributionManagement>
 </project>
