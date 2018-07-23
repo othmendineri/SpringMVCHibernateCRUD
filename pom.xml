@@ -145,7 +145,6 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
-            
             <plugin>
 			   <groupId>org.apache.tomcat.maven</groupId>
 			   <artifactId>tomcat7-maven-plugin</artifactId>
@@ -153,7 +152,7 @@
 			   </plugin>
 			   <!--debut plugin docker  -->
 		<plugin>
-				<groupId>com.spotify</groupId>
+				<groupId>com.jwt.spring</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
 				<version>0.4.5</version>
 				<configuration>
