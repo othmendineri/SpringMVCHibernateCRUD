@@ -152,7 +152,7 @@
 			   </plugin>
 			   <!--debut plugin docker  -->
 		<plugin>
-				<groupId>com.jwt.spring</groupId>
+				<groupId>com.spotify</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
 				<version>0.4.5</version>
 				<configuration>
