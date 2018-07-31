@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-MAINTAINER Niko Benkler and Tobias Haßberg
+MAINTAINER ESSID WADII
 
 # Set environment variables
 ENV MD5=4e7ce65489347960e9797d2161e0ada2 \
